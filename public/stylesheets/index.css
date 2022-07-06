@@ -1,6 +1,7 @@
 /* index */
 
-h1.title {
+  h1.title {
+    margin: 0 auto;
     font-size: 20px;
   }
   

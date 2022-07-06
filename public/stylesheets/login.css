@@ -1,0 +1,55 @@
+header {
+    margin-bottom :60px;
+}
+
+header > img {
+    width: 16px;
+    height: 16px;
+}
+
+a.back {
+    width: 16px;
+    height: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+input {
+    margin: 20px 0;
+}
+
+input[type='text'], input[type='password'] {
+   border: none;
+   padding: 8px 0;
+   border-bottom: 1px solid #AAA;
+}
+
+input[type='submit'] {
+    background-color: #28C1BC;
+    border: none;
+    border-radius: 4px;
+    height: 44px;
+    color: white;
+ }
+
+::placeholder {
+    color: #AAA;
+}
+
+div.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0 36px;
+}
+
+
+a.signup {
+    color: #28C1BC;
+    margin-left: 6px;
+ }
+
