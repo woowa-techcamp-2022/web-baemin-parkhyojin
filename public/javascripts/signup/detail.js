@@ -31,6 +31,12 @@ document.querySelector('.submit-button').addEventListener('click', (e) => {
 })
 
 
+document.querySelector('.delete-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    const $emailInput = document.querySelector('input[name="email"]');
+    $emailInput.value = "";
+})
+
 const isFormValid = () => {
     const result = [...document.querySelectorAll('span.checkmark')].reduce((acc, $el) => {
         return $el.classList.contains('valid')? acc: false;
