@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "email": "test@woowahan.com",
+      "nickname": "woowahan00",
+      "password": "woowa",
+      "birthDate": "2011.03.10"
+    }
+  ]
+}

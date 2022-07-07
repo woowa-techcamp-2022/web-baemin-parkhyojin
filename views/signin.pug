@@ -1,13 +1,13 @@
 extends layout
 
 block head
-  link(rel='stylesheet', href='/stylesheets/login.css')
+  link(rel='stylesheet', href='/stylesheets/signin.css')
 
 block content
     header
       a.back(href="/") 
         img(src='/images/cancel.svg' alt="cancel")
-    form(action="/users/login" method="post") 
+    form(action="/users/signin" method="post") 
         input(type="text" name="id" placeholder="아이디 또는 이메일")
         input(type="password" name="password" placeholder="비밀번호")
         input(type="submit" value="로그인")

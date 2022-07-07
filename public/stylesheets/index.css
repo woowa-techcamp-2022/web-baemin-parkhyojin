@@ -9,13 +9,13 @@
     width: 100%;
   }
   
-  .login-anchor {
+  .signin-anchor {
     display: flex;
     align-items: center;
     padding: 8px 20px;
   }
   
-  .login-anchor > p {
+  .signin-anchor > p {
     font-size: 18px;
     margin-right: auto;
     color: var(--color-gray500);
