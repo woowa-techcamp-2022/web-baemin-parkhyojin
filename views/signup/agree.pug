@@ -1,7 +1,10 @@
 extends ../layout
 
-block content
+block head
   link(rel='stylesheet', href='/stylesheets/signup/agree.css')
+  script(src="/javascripts/signup/agree.js", type="module", defer="defer") 
+
+block content
   div.wrapper
     header
       a.back(href='/login') 
@@ -28,4 +31,3 @@ block content
           label(for=v.name)= v.label
           img.radio(src=v.imgSrc)    
       a.next.disabled(href="/signup/phone")= '다음으로'
-  script(src="/javascripts/signup/agree.js" type="module") 
