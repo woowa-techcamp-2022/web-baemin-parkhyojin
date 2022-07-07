@@ -18,6 +18,10 @@ document.querySelector('button.secondary-button').addEventListener('click', (e) 
     setCertNum($input);
 })
 
+document.querySelector('input[name="certNum"]').addEventListener('keyup', () => {
+    updateCheckmark('certNum', false);
+    enableNextAnchor(false);
+})
 const addDashToPhoneNum = (value) => {
     const numString = value.replace(/[^0-9]/g, "");
     const result = numString.split("").reduce((acc, curr) => {
