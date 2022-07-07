@@ -15,17 +15,12 @@ a.back {
 form {
     display: flex;
     flex-direction: column;
-    padding: 20px;
-}
-
-input {
-    margin: 20px 0;
+    padding: 20px 0;
 }
 
 input[type='text'], input[type='password'] {
    border: none;
    padding: 8px 0;
-   border-bottom: 1px solid var(--color-gray500);
 }
 
 input[type='submit'] {
@@ -34,7 +29,8 @@ input[type='submit'] {
     border-radius: 4px;
     height: 44px;
     color: white;
- }
+    margin: 0 20px;
+}
 
 div.signup {
     display: flex;
