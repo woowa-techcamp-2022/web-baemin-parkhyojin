@@ -22,6 +22,12 @@ document.querySelector('input[name="certNum"]').addEventListener('keyup', () => 
     updateCheckmark('certNum', false);
     enableNextAnchor(false);
 })
+
+document.querySelector('button.primary.text-button').addEventListener('click', () => {
+    const $input = document.querySelector('input[name="certNum"]');
+    updateCertNum($input);
+})
+
 const addDashToPhoneNum = (value) => {
     const numString = value.replace(/[^0-9]/g, "");
     const result = numString.split("").reduce((acc, curr) => {
