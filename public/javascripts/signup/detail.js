@@ -1,3 +1,24 @@
+document.querySelector('form').addEventListener('keyup', (e) => {
+    const {name, value} = e.target;
+    if(name==="email"){
+        updateCheckmark(name, false);
+        document.querySelector('.delete-button').style.display="block";
+    }
+    if(name==="nickname"){
+        updateCheckmark(name, value!=="");
+    }
+    if(name==="password"){
+        const valid = isPasswordValid(e.target.value);
+        updateUI(name, valid);
+    }
+    if(name==="birthDate"){
+        e.target.value = addDotToBirthDate(value);
+        const valid = isBirthDateValid(e.target.value);
+        updateUI(name, valid);
+    }
+    const formValid = isFormValid();
+    document.querySelector('#signup-form-submit').disabled = !formValid;
+})
 
 const isFormValid = () => {
     const result = [...document.querySelectorAll('span.checkmark')].reduce((acc, $el) => {
