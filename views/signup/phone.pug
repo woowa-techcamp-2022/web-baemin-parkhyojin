@@ -1,0 +1,30 @@
+extends ../layout
+
+include ./text-input
+
+block head
+  link(rel='stylesheet', href='/stylesheets/signup/index.css')
+  link(rel='stylesheet', href='/stylesheets/signup/phone.css')
+  script(src="/javascripts/signup/phone.js", type="module", defer="defer") 
+
+block content  
+    header
+        a.back(href='/signup/agree') 
+            img(src='/images/arrow-left.svg' alt='arrow-left')
+        h1.title= '회원가입'
+        a.next.disabled(href='/signup/detail')= '다음'
+    +text-input({
+        name: "phoneNum",
+        label: "휴대전화",
+        placeholder: "전화번호를 입력해주세요.",
+        deleteButton: true,
+        guideText: "10자 이상"
+    })
+    button.secondary-button(disabled="true")= "인증번호 받기"
+    +text-input({
+        display: "none",
+        name: "certNum",
+        label: "인증번호",
+        placeholder: "인증번호를 입력해주세요.",
+    })
+    button.primary.text-button(style={"display": "none", "margin": "-20px 20px 0 auto"})= "인증번호 다시받기"
