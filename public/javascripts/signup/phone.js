@@ -20,3 +20,8 @@ const updateCheckmark = (name, checked) => {
     }
     $checkMark.classList.remove('valid');
 }
+
+const enableCertNumButton = (enabled) => {
+    const $certNumButton = document.querySelector('button.secondary-button');
+    $certNumButton.disabled = !enabled;
+}
