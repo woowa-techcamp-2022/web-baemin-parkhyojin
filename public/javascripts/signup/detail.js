@@ -27,3 +27,26 @@ const addDotToBirthDate = (birthDate) => {
     }, "").slice(0, 11);
     return result;
 }
+
+const isBirthDateValid = (birthDate) => {
+    if(!/\d{4}.\d{2}.\d{2}/.test(birthDate)) return false;
+    const [year, month, date] = birthDate.split(".").map(Number);
+    if(year > 2022) return false;
+    switch(month){
+        case 1:
+        case 3: 
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            return date<=31;
+        case 2:
+            return date<=28;
+        case 4: 
+        case 6:
+        case 9:
+        case 11:
+            return date<=30;   
+    }
+}
