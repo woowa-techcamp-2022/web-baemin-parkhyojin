@@ -9,6 +9,15 @@ document.querySelector('.delete-button').addEventListener('click', () => {
     document.querySelector('input[name="phoneNum"]').value = "";
 })
 
+document.querySelector('button.secondary-button').addEventListener('click', (e) => {
+    document.querySelector('input[name="phoneNum"]').disabled = true;
+    document.querySelector('.delete-button').style.display = 'none';
+    e.target.style.display="none";
+    showCertNumUI();
+    const $input = document.querySelector('input[name="certNum"]');
+    setCertNum($input);
+})
+
 const addDashToPhoneNum = (value) => {
     const numString = value.replace(/[^0-9]/g, "");
     const result = numString.split("").reduce((acc, curr) => {
