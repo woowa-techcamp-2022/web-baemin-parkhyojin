@@ -1,4 +1,6 @@
-document.querySelector('form').addEventListener('keyup', (e) => {
+const $form = document.querySelector('form');
+
+$form.addEventListener('keyup', (e) => {
     const {name, value} = e.target;
     if(name==="email"){
         updateCheckmark(name, false);
@@ -20,21 +22,27 @@ document.querySelector('form').addEventListener('keyup', (e) => {
     document.querySelector('#signup-form-submit').disabled = !formValid;
 })
 
-document.querySelector('.submit-button').addEventListener('click', (e) => {
+$form.addEventListener('click', (e) => {
     e.preventDefault();
+    const {classList} = e.target;
     const $emailInput = document.querySelector('input[name="email"]');
-    const valid = isEmailValid($emailInput.value);
-    document.querySelector('.delete-button').style.display= valid? "none" : "block";
-    updateUI('email', valid);
-    const formValid = isFormValid();
-    document.querySelector('#signup-form-submit').disabled = !formValid;
-})
 
-
-document.querySelector('.delete-button').addEventListener('click', (e) => {
-    e.preventDefault();
-    const $emailInput = document.querySelector('input[name="email"]');
-    $emailInput.value = "";
+    if(classList.contains('delete-button')){
+        $emailInput.value = "";
+    }
+    if(classList.contains('submit-button')){
+        const valid = isEmailValid($emailInput.value);
+        const $deleteButton = document.querySelector('.delete-button');
+        if(valid){
+            $emailInput.disabled = true;
+            e.target.disabled = true;
+            $deleteButton.style.display = "none";
+            [...document.querySelectorAll(".text-input-wrapper")].forEach($el => {
+                $el.style.display = "flex";
+            })
+        }
+        updateUI('email', valid);
+    }
 })
 
 const isFormValid = () => {
