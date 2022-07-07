@@ -1,0 +1,36 @@
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 36px;
+}
+
+header > img {
+    width: 16px;
+    height: 16px;
+}
+
+a.back {
+    width: 16px;
+    height: 16px;
+    margin-right: 24px;
+}
+
+input[type="submit"] {
+    padding: 0;
+    width: 40px;
+    color: var(--color-gray900);
+    background: none;
+    border: none;
+    font-size: 14px;
+}
+
+
+input[type="submit"]:disabled {
+    color: var(--color-gray500);
+}
+
+
+h1.title {
+    margin: 0 auto;
+    font-size: 20px;
+}
