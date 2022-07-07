@@ -12,17 +12,18 @@ block content
             img(src='/images/arrow-left.svg' alt='arrow-left')
         h1.title= '회원가입'
         a.next.disabled(href='/signup/detail')= '다음'
-    +text-input({
-        name: "phoneNum",
-        label: "휴대전화",
-        placeholder: "전화번호를 입력해주세요.",
-        deleteButton: true,
-    })
-    button.secondary-button(disabled="true")= "인증번호 받기"
-    +text-input({
-        display: "none",
-        name: "certNum",
-        label: "인증번호",
-        placeholder: "인증번호를 입력해주세요.",
-    })
-    button.primary.text-button(style={"display": "none", "margin": "0 20px 0 auto"})= "인증번호 다시받기"
+    form
+        +text-input({
+            name: "phoneNum",
+            label: "휴대전화",
+            placeholder: "전화번호를 입력해주세요.",
+            deleteButton: true,
+        })
+        button.secondary-button(disabled="true")= "인증번호 받기"
+        +text-input({
+            display: "none",
+            name: "certNum",
+            label: "인증번호",
+            placeholder: "인증번호를 입력해주세요.",
+        })
+        button.primary.text-button(style={"display": "none", "margin": "0 20px 0 auto"})= "인증번호 다시받기"
