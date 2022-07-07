@@ -25,3 +25,9 @@ const enableCertNumButton = (enabled) => {
     const $certNumButton = document.querySelector('button.secondary-button');
     $certNumButton.disabled = !enabled;
 }
+
+const showCertNumUI = () => {
+    document.querySelector('.text-input-wrapper[data-name="certNum"]').style.display="flex";
+    document.querySelector('button.primary.text-button').style.display="block";
+}
+
