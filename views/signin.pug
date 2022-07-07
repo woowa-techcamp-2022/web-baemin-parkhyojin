@@ -1,16 +1,31 @@
 extends layout
 
+include ./common/text-input
+
 block head
   link(rel='stylesheet', href='/stylesheets/signin.css')
+  script(src="/javascripts/signin.js", type="module", defer="defer") 
+
 
 block content
     header
       a.back(href="/") 
         img(src='/images/cancel.svg' alt="cancel")
     form(action="/users/signin" method="post") 
-        input(type="text" name="email" placeholder="이메일")
-        input(type="password" name="password" placeholder="비밀번호")
-        input(type="submit" value="로그인")
+      +text-input({
+          name: "email",
+          placeholder: "이메일",
+          validIcon: false,
+          errorText: "이메일을 입력해주세요."
+      })
+      +text-input({
+          name: "password",
+          type: "password",
+          placeholder: "비밀번호",
+          validIcon: false,
+          errorText: "비밀번호를 입력해주세요."
+      })
+      input(type="submit" value="로그인")
     div.signup
-         p= '혹시, 배달의민족이 처음이신가요?'
-         a.signup(href="/signup/agree")= '회원가입'
+      p= '혹시, 배달의민족이 처음이신가요?'
+      a.signup(href="/signup/agree")= '회원가입'
