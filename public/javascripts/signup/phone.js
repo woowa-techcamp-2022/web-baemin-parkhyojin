@@ -51,9 +51,9 @@ const isPhoneNumValid = (value) => {
     return phoneRegex.test(value)
 }
 
-const updateCheckmark = (name, checked) => {
+const updateCheckmark = (name, valid) => {
     const $checkMark = document.querySelector(`.text-input-wrapper[data-name="${name}"] span.checkmark`);
-    if (checked) {
+    if (valid) {
         $checkMark.classList.add('valid');
         return;
     }
