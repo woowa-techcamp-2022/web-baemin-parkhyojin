@@ -18,3 +18,12 @@ const isPasswordValid = (password) => {
     }
     return true;
 }
+
+const addDotToBirthDate = (birthDate) => {
+    const numString = birthDate.replace(/[^0-9]/g, "");
+    const result = numString.split("").reduce((acc, curr) => {
+        if(acc.length===4 || acc.length===7) return acc + "." + curr;
+        return acc + curr;
+    }, "").slice(0, 11);
+    return result;
+}
