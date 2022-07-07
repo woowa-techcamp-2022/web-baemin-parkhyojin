@@ -1,3 +1,13 @@
+
+const updateCheckmark = (name, valid) => {
+    const $checkMark = document.querySelector(`.text-input-wrapper[data-name="${name}"] span.checkmark`);
+    if (valid) {
+        $checkMark.classList.add('valid');
+        return;
+    }
+    $checkMark.classList.remove('valid');
+}
+
 const isEmailValid = (email) => {
     return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email);
 }
