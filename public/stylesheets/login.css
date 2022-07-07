@@ -36,10 +36,6 @@ input[type='submit'] {
     color: white;
  }
 
-::placeholder {
-    color: var(--color-gray500);
-}
-
 div.signup {
     display: flex;
     justify-content: center;
