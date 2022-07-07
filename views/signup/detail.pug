@@ -1,0 +1,43 @@
+extends ../layout
+
+include ./text-input
+
+block head
+  link(rel='stylesheet', href='/stylesheets/signup/index.css')
+  link(rel='stylesheet', href='/stylesheets/signup/detail.css')
+  script(src="/javascripts/signup/detail.js", type="module", defer="defer") 
+
+block content  
+    header
+        a.back(href='/signup/phone') 
+            img(src='/images/arrow-left.svg' alt='arrow-left')
+        h1.title= '회원가입'
+        input(type="submit" form="signup" id="signup-form-submit" value="완료" disabled="true")
+    form(action="/users/signup" method="post" id="signup") 
+        +text-input({
+            name: "email",
+            label: "이메일",
+            placeholder: "이메일을 입력해주세요.",
+            deleteButton: true,
+            submitButton: true,
+            submitButtonText: '중복확인',
+            errorText: "이메일 형식이 올바르지 않습니다."
+        })
+        +text-input({
+            name: "nickname",
+            label: "닉네임",
+            placeholder: "닉네임을 입력해주세요.",
+        })
+        +text-input({
+            type: "password",
+            name: "password",
+            label: "비밀번호",
+            placeholder: "비밀번호를 입력해주세요.",
+            errorText: "10자 이상 영어 대문자, 소문자, 숫자, 특수문자 중 2종류를 조합해야 하고, 같은 숫자 혹은 연속된 숫자를 3개 이상 입력할 수 없습니다."
+        })
+        +text-input({
+            name: "birthDate",
+            label: "생년월일",
+            placeholder: "생년월일을 입력해주세요.",
+            errorText: "날짜가 올바르지 않습니다."
+        })
