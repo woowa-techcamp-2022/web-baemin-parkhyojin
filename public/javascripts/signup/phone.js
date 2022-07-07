@@ -50,3 +50,8 @@ const initCertNum = ($input) => {
     updateCheckmark('certNum', false);
 }
 
+const updateCertNum = ($input) => {
+    initCertNum($input);
+    setCertNum($input);
+}
+
