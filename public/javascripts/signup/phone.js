@@ -38,3 +38,9 @@ const setCertNum = ($input) => {
         clearTimeout(timerId);
     }, 2000);
 }
+
+const enableNext = () => {
+    updateCheckmark('certNum', true);
+    enableNextAnchor(true);
+}
+
