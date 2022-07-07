@@ -31,3 +31,10 @@ const showCertNumUI = () => {
     document.querySelector('button.primary.text-button').style.display="block";
 }
 
+const setCertNum = ($input) => {
+    const timerId = setTimeout(() => {
+        $input.value = getCertNum(4);
+        enableNext();
+        clearTimeout(timerId);
+    }, 2000);
+}
