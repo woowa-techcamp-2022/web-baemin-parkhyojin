@@ -25,20 +25,16 @@ input {
 input[type='text'], input[type='password'] {
    border: none;
    padding: 8px 0;
-   border-bottom: 1px solid #AAA;
+   border-bottom: 1px solid var(--color-gray500);
 }
 
 input[type='submit'] {
-    background-color: #28C1BC;
+    background-color: var(--color-theme);
     border: none;
     border-radius: 4px;
     height: 44px;
     color: white;
  }
-
-::placeholder {
-    color: #AAA;
-}
 
 div.signup {
     display: flex;
@@ -49,7 +45,7 @@ div.signup {
 
 
 a.signup {
-    color: #28C1BC;
+    color: var(--color-theme);
     margin-left: 6px;
  }
 

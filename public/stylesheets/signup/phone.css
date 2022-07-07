@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 36px;
+}
+
+header > img {
+    width: 16px;
+    height: 16px;
+}
+
+a.back {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+}
+
+a.next {
+    width: 28px;
+    color: var(--color-gray900);
+}
+
+
+a.next.disabled {
+    pointer-events: none;
+    cursor: default;
+    color: var(--color-gray500);
+}
+
+
+h1.title {
+    margin: 0 auto;
+    font-size: 20px;
+}

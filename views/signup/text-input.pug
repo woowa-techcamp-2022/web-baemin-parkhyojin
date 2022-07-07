@@ -1,0 +1,13 @@
+mixin text-input({name, label, placeholder, deleteButton, submitButton, submitButtonText, errorText, display = "flex"})
+    div.text-input-wrapper(style={"display": display}, data-name=name)
+        label(for=name)=label
+        div.row
+            div.input-wrapper
+                input(type="text", name=name, id=name, placeholder=placeholder)
+                if deleteButton  
+                    button.delete-button
+                        span.xmark
+                span.checkmark
+            if submitButton
+                button.submit-button=submitButtonText
+        p.error-text=errorText

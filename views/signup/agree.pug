@@ -5,29 +5,28 @@ block head
   script(src="/javascripts/signup/agree.js", type="module", defer="defer") 
 
 block content
-  div.wrapper
-    header
-      a.back(href='/login') 
-        img(src='/images/cancel.svg' alt='cancel')
-      h1.title= '회원가입'
-    h2
-      | 어서오세요 <br/>
-      | 약관동의가 필요해요
-    form
+  header
+    a.back(href='/login') 
+      img(src='/images/cancel.svg' alt='cancel')
+    h1.title= '회원가입'
+  h2
+    | 어서오세요 <br/>
+    | 약관동의가 필요해요
+  form
+    div.row   
+      input(type='checkbox' name='all-agree' id='all-agree')
+      label(for='all-agree')
+        strong= '전체동의'
+    - const checkboxData = [{name: '배달의민족 이용약관 동의', agreeRequired: true}, {name: '전자금융거래 이용약관 동의', agreeRequired: true}, {name: '개인정보 수집이용 동의', agreeRequired: true}, {name: '개인정보 제3자 제공 동의', agreeRequired: false}, {name: '마케팅 정보 메일, SMS 수신 동의', agreeRequired: false}]
+    each v in checkboxData  
       div.row   
-        input(type='checkbox' name='all-agree' id='all-agree')
-        label(for='all-agree')
-          strong= '전체동의'
-      - const checkboxData = [{name: '배달의민족 이용약관 동의', agreeRequired: true}, {name: '전자금융거래 이용약관 동의', agreeRequired: true}, {name: '개인정보 수집이용 동의', agreeRequired: true}, {name: '개인정보 제3자 제공 동의', agreeRequired: false}, {name: '마케팅 정보 메일, SMS 수신 동의', agreeRequired: false}]
-      each v in checkboxData  
-        div.row   
-          input.agree-required(type='checkbox' name=v.name id=v.name agree-required=v.agreeRequired)
-          label(for=v.name)= v.name + (v.agreeRequired? '' : '(선택)')
-          img.arrow(src='/images/arrow.png' alt='arrow')      
-      - const radioData = [{name: 'age-range', value: 'over-14', label: '만 14세 이상입니다.', checked: true, imgSrc: '/images/over.png'}, {name: 'age-range', value: 'under-14', label: '만 14세 미만입니다.', checked: false, imgSrc: '/images/under.png'}]
-      each v in radioData 
-        div.radio-wrapper
-          input(type="radio" name=v.name id=v.name value=v.value checked=v.checked)
-          label(for=v.name)= v.label
-          img.radio(src=v.imgSrc)    
-      a.next.disabled(href="/signup/phone")= '다음으로'
+        input.agree-required(type='checkbox' name=v.name id=v.name agree-required=v.agreeRequired)
+        label(for=v.name)= v.name + (v.agreeRequired? '' : '(선택)')
+        img.arrow(src='/images/arrow.png' alt='arrow')      
+    - const radioData = [{name: 'age-range', value: 'over-14', label: '만 14세 이상입니다.', checked: true, imgSrc: '/images/over.png'}, {name: 'age-range', value: 'under-14', label: '만 14세 미만입니다.', checked: false, imgSrc: '/images/under.png'}]
+    each v in radioData 
+      div.radio-wrapper
+        input(type="radio" name=v.name id=v.name value=v.value checked=v.checked)
+        label(for=v.name)= v.label
+        img.radio(src=v.imgSrc)    
+    a.next.disabled(href="/signup/phone")= '다음으로'
