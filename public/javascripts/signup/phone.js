@@ -4,6 +4,11 @@ document.querySelector('input[name="phoneNum"]').addEventListener('keyup', (e) =
     updateCheckmark('phoneNum', valid);
     enableCertNumButton(valid);
 })
+
+document.querySelector('.delete-button').addEventListener('click', () => {
+    document.querySelector('input[name="phoneNum"]').value = "";
+})
+
 const addDashToPhoneNum = (value) => {
     const numString = value.replace(/[^0-9]/g, "");
     const result = numString.split("").reduce((acc, curr) => {
