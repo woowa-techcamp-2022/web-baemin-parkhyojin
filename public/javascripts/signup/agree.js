@@ -1,3 +1,15 @@
+document.querySelector('form').addEventListener('click', (e) => {
+    const {name, checked, type, classList} = e.target;
+    if(name==="all-agree"){
+        checkAll(checked);
+    }
+    if(name!=="all-agree" && type==="checkbox"){
+        updateAllChecked();
+    }
+    if(name==="all-agree" || classList.contains('agree-required')){
+        updateNextEnabled();
+    }
+})
 
 const checkAll = (checked) => {
     [...document.querySelectorAll('input[type="checkbox"]')].forEach(($el) => {
