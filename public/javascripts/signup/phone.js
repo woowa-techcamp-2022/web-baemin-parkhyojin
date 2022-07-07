@@ -1,32 +1,40 @@
-document.querySelector('input[name="phoneNum"]').addEventListener('keyup', (e) => {
-    e.target.value = addDashToPhoneNum(e.target.value);
+const $form = document.querySelector('form');
+
+$form.addEventListener('keyup', (e) => {
+    const {name, value} = e.target;
+    if(name==="phoneNum"){
+        e.target.value = addDashToPhoneNum(value);
     const valid = isPhoneNumValid(e.target.value);
     updateCheckmark('phoneNum', valid);
     enableCertNumButton(valid);
+    }
+    if(name==="certNum"){
+        const valid = false;
+        updateCheckmark('certNum', valid);
+        enableNextAnchor(valid);
+    }
 })
 
-document.querySelector('.delete-button').addEventListener('click', () => {
-    document.querySelector('input[name="phoneNum"]').value = "";
+$form.addEventListener('click', (e) => {
+    const {classList} = e.target;
+    e.preventDefault();
+    const $phoneNumInput = document.querySelector('input[name="phoneNum"]');
+    const $certNumInput = document.querySelector('input[name="certNum"]');
+
+    if(classList.contains('delete-button')){
+        $phoneNumInput.value = "";
     updateCheckmark('phoneNum', false);
-})
-
-document.querySelector('button.secondary-button').addEventListener('click', (e) => {
-    document.querySelector('input[name="phoneNum"]').disabled = true;
+    }
+    if(classList.contains('secondary-button')){
+        $phoneNumInput.disabled = true;
     document.querySelector('.delete-button').style.display = 'none';
     e.target.style.display="none";
     showCertNumUI();
-    const $input = document.querySelector('input[name="certNum"]');
-    setCertNum($input);
-})
-
-document.querySelector('input[name="certNum"]').addEventListener('keyup', () => {
-    updateCheckmark('certNum', false);
-    enableNextAnchor(false);
-})
-
-document.querySelector('button.primary.text-button').addEventListener('click', () => {
-    const $input = document.querySelector('input[name="certNum"]');
-    updateCertNum($input);
+        setCertNum($certNumInput);
+    }
+    if(classList.contains('text-button')){
+        updateCertNum($certNumInput);
+    }
 })
 
 const addDashToPhoneNum = (value) => {
