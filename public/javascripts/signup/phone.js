@@ -55,3 +55,12 @@ const updateCertNum = ($input) => {
     setCertNum($input);
 }
 
+const getCertNum = (len) => {
+    const characters = '0123456789';
+    const charactersLen = characters.length;
+    let result = '';
+    for (let i = 0; i < len; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLen));
+    }
+    return result;
+}
