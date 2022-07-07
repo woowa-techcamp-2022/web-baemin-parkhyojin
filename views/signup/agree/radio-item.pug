@@ -1,0 +1,5 @@
+mixin radio-item({name, value, label, checked = false, imgSrc})
+      div.radio-wrapper
+        input(type="radio" name=name id=name value=value checked=checked)
+        label(for=name)= label
+        img.radio(src=imgSrc)      

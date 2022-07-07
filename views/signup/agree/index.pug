@@ -1,0 +1,15 @@
+extends ../../layout
+
+block head
+  link(rel='stylesheet', href='/stylesheets/signup/agree.css')
+  script(src="/javascripts/signup/agree.js", type="module", defer="defer") 
+
+block content
+  include ./header
+  h2
+    | 어서오세요 <br/>
+    | 약관동의가 필요해요
+  form
+    include ./checkbox-list      
+    include ./radio-list
+    a.next.disabled(href="/signup/phone")= '다음으로'
