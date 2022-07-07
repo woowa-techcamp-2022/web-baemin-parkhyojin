@@ -17,17 +17,19 @@
     padding-bottom: 8px;
 }
 
+.error-text {
+    display: none;
+    font-size: 12px;
+}
 
 .error {
+    display: flex;
     border-color: var(--color-red);
     color: var(--color-red);
 }
 
-.error-text {
-    font-size: 12px;
-}
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
     flex: 1;
     height: 24px;
     margin-right: 8px;
