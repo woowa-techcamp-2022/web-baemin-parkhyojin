@@ -12,4 +12,14 @@ router.post('/signup', async (req, res) => {
   res.redirect('/signin');
 });
 
+const getSessionId = (len) => {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const charactersLen = characters.length;
+    let result = '';
+    for (let i = 0; i < len; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLen));
+    }
+    return result;
+}
+
 module.exports = router;
