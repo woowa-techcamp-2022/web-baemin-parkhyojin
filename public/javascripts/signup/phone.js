@@ -64,3 +64,11 @@ const getCertNum = (len) => {
     }
     return result;
 }
+
+const enableNextAnchor = (enabled) => {
+    if(enabled){
+        document.querySelector('a.next').classList.remove('disabled');
+        return;
+    }
+    document.querySelector('a.next').classList.add('disabled');
+}
