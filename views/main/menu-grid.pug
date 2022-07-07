@@ -1,0 +1,28 @@
+include ./menu-grid-item
+
+mixin menu-grid()
+    ul.menu-grid
+      +menu-grid-item({
+          imgSrc: '/images/point.png',
+          label: '포인트',
+      })
+      +menu-grid-item({
+          imgSrc: '/images/coupon.png',
+          label: '쿠폰함',
+      })
+      +menu-grid-item({
+          imgSrc: '/images/present.png',
+          label: '선물함',
+      })
+      +menu-grid-item({
+          imgSrc: '/images/heart.png',
+          label: '찜',
+      })
+      +menu-grid-item({
+          imgSrc: '/images/order.png',
+          label: '주문내역',
+      })
+      +menu-grid-item({
+          imgSrc: '/images/review.png',
+          label: '리뷰관리',
+      })

@@ -1,0 +1,14 @@
+extends ../layout
+
+include ./menu-grid
+include ./menu-list
+
+block head
+  link(rel='stylesheet', href='/stylesheets/index.css')
+  
+block content
+    include ./header
+    img.full(src='/images/banner.png')
+    include ./banner
+    +menu-grid()
+    +menu-list()
