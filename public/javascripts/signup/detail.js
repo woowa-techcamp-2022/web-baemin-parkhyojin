@@ -1,4 +1,11 @@
 
+const isFormValid = () => {
+    const result = [...document.querySelectorAll('span.checkmark')].reduce((acc, $el) => {
+        return $el.classList.contains('valid')? acc: false;
+    }, true)
+    return result;
+}
+
 const updateUI = (name, valid) => {
     updateCheckmark(name, valid);
     const $inputWrapper = document.querySelector(`.text-input-wrapper[data-name="${name}"] .input-wrapper`);
