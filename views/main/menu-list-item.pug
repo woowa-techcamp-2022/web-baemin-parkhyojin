@@ -1,0 +1,10 @@
+mixin menu-list-item({label, newItem = false, description})
+    li
+        div 
+            div.row
+                p=label
+                if newItem 
+                    img.new(src='/images/new.png')
+            if description
+                p.description=description
+        img.arrow(src='/images/arrow.png')
