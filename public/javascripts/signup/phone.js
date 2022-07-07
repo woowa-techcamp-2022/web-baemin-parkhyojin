@@ -12,3 +12,11 @@ const isPhoneNumValid = (value) => {
     return phoneRegex.test(value)
 }
 
+const updateCheckmark = (name, checked) => {
+    const $checkMark = document.querySelector(`.text-input-wrapper[data-name="${name}"] span.checkmark`);
+    if (checked) {
+        $checkMark.classList.add('valid');
+        return;
+    }
+    $checkMark.classList.remove('valid');
+}
