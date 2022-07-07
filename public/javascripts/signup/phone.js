@@ -7,6 +7,7 @@ document.querySelector('input[name="phoneNum"]').addEventListener('keyup', (e) =
 
 document.querySelector('.delete-button').addEventListener('click', () => {
     document.querySelector('input[name="phoneNum"]').value = "";
+    updateCheckmark('phoneNum', false);
 })
 
 document.querySelector('button.secondary-button').addEventListener('click', (e) => {
