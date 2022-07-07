@@ -26,17 +26,20 @@ block content
             name: "nickname",
             label: "닉네임",
             placeholder: "닉네임을 입력해주세요.",
+            display: "none"
         })
         +text-input({
             type: "password",
             name: "password",
             label: "비밀번호",
             placeholder: "비밀번호를 입력해주세요.",
-            errorText: "10자 이상 영어 대문자, 소문자, 숫자, 특수문자 중 2종류를 조합해야 하고, 같은 숫자 혹은 연속된 숫자를 3개 이상 입력할 수 없습니다."
+            errorText: "10자 이상 영어 대문자, 소문자, 숫자, 특수문자 중 2종류를 조합해야 하고, 같은 숫자 혹은 연속된 숫자를 3개 이상 입력할 수 없습니다.",
+            display: "none"
         })
         +text-input({
             name: "birthDate",
             label: "생년월일",
             placeholder: "생년월일을 입력해주세요.",
-            errorText: "날짜가 올바르지 않습니다."
+            errorText: "날짜가 올바르지 않습니다.",
+            display: "none"
         })
