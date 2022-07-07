@@ -1,10 +1,10 @@
 {
-    "users": [
-      {
-        "email": "test@woowahan.com",
-        "password": "woowahan00",
-        "nickname": "woowa",
-        "birth": "2011.03.10"
-      }
-    ]
-  }
+  "users": [
+    {
+      "email": "test@woowahan.com",
+      "nickname": "woowahan00",
+      "password": "woowa",
+      "birthDate": "2011.03.10"
+    }
+  ]
+}
