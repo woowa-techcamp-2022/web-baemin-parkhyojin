@@ -4,8 +4,8 @@
     margin: 0 auto;
     font-size: 20px;
   }
-  
-  img.banner {
+
+  img.full {
     width: 100%;
   }
   
@@ -53,7 +53,7 @@
     font-size: 12px;
   }
   
-  img.grid-item {
+  img.default {
     width: 32px;
     height: 32px;
     object-fit: contain;
