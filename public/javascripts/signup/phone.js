@@ -105,9 +105,10 @@ const getCertNum = (len) => {
 }
 
 const enableNextAnchor = (enabled) => {
+    const $nextAnchor = document.querySelector('a.next');
     if(enabled){
-        document.querySelector('a.next').classList.remove('disabled');
+        $nextAnchor.classList.remove('disabled');
         return;
     }
-    document.querySelector('a.next').classList.add('disabled');
+    $nextAnchor.classList.add('disabled');
 }
