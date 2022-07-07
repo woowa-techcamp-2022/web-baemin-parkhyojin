@@ -1,4 +1,18 @@
 
+const updateUI = (name, valid) => {
+    updateCheckmark(name, valid);
+    const $inputWrapper = document.querySelector(`.text-input-wrapper[data-name="${name}"] .input-wrapper`);
+    const $errorText = document.querySelector(`.text-input-wrapper[data-name="${name}"] .error-text`);
+    if(valid) {
+        $errorText.classList.remove('error');
+        $inputWrapper.classList.remove('error');
+    }
+    else {
+        $errorText.classList.add('error');
+        $inputWrapper.classList.add('error');
+    }
+}
+
 const updateCheckmark = (name, valid) => {
     const $checkMark = document.querySelector(`.text-input-wrapper[data-name="${name}"] span.checkmark`);
     if (valid) {
