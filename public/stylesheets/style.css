@@ -1,6 +1,16 @@
 /* global */
 
-*{
+:root {
+  --color-theme: #28C1BC;
+  --color-gray100: #F0F0F0;
+  --color-gray500: #AAA;
+  --color-gray900: #333;
+  --color-white: #FFF;
+  --color-green: #52B201;
+  --color-red: #FC5A46;
+}
+
+* {
   box-sizing: border-box;
 }
 
@@ -20,7 +30,7 @@ body {
   max-width: 400px;
   margin: 0 auto;
   padding-bottom: 12px;
-  border: 1px solid #333;
+  border: 1px solid var(--color-gray900);
 }
 
 header {
@@ -32,7 +42,7 @@ header {
 }
 
 p {
-  color: #333;
+  color: var(--color-gray900);
 }
 
 a {
