@@ -1,0 +1,86 @@
+.text-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.text-input-wrapper > label {
+    color: var(--color-gray500);
+    margin-bottom: 12px;
+}
+
+.input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--color-gray500);
+    padding-bottom: 8px;
+}
+
+
+.error {
+    border-color: var(--color-red);
+    color: var(--color-red);
+}
+
+.error-text {
+    font-size: 12px;
+}
+
+input[type="text"] {
+    flex: 1;
+    height: 24px;
+    margin-right: 8px;
+    border: none;
+    background: none;
+}
+
+span.checkmark {
+    font-size: 20px;
+}
+
+span.checkmark:before {
+    content: '\2713';
+    display: inline-block;
+    color: var(--color-gray500);
+    padding-right: 4px;
+}
+
+span.checkmark.valid:before {
+    color: var(--color-theme);
+}
+
+.delete-button {
+    padding: 0;
+    background-color: var(--color-gray500);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: none;
+    margin-right: 8px;
+}
+
+span.xmark {
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+span.xmark:before {
+    content: '\00d7';
+    display: inline-block;
+    color: var(--color-gray100);
+    padding: 0 auto;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+button.submit-button {
+    height: 28px;
+    margin-left: 8px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray500);
+    border-radius: 4px;
+}
