@@ -2,8 +2,8 @@
   "users": [
     {
       "email": "test@woowahan.com",
-      "nickname": "woowahan00",
-      "password": "woowa",
+      "nickname": "woowa",
+      "password": "woowahan00",
       "birthDate": "2011.03.10"
     }
   ]
