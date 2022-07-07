@@ -4,9 +4,9 @@ $form.addEventListener('keyup', (e) => {
     const {name, value} = e.target;
     if(name==="phoneNum"){
         e.target.value = addDashToPhoneNum(value);
-    const valid = isPhoneNumValid(e.target.value);
-    updateCheckmark('phoneNum', valid);
-    enableCertNumButton(valid);
+        const valid = isPhoneNumValid(e.target.value);
+        updateCheckmark('phoneNum', valid);
+        enableCertNumButton(valid);
     }
     if(name==="certNum"){
         const valid = false;
@@ -23,13 +23,13 @@ $form.addEventListener('click', (e) => {
 
     if(classList.contains('delete-button')){
         $phoneNumInput.value = "";
-    updateCheckmark('phoneNum', false);
+        updateCheckmark('phoneNum', false);
     }
     if(classList.contains('secondary-button')){
         $phoneNumInput.disabled = true;
-    document.querySelector('.delete-button').style.display = 'none';
-    e.target.style.display="none";
-    showCertNumUI();
+        document.querySelector('.delete-button').style.display = 'none';
+        e.target.style.display="none";
+        showCertNumUI();
         setCertNum($certNumInput);
     }
     if(classList.contains('text-button')){
