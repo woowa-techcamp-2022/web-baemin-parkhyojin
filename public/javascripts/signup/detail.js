@@ -20,6 +20,17 @@ document.querySelector('form').addEventListener('keyup', (e) => {
     document.querySelector('#signup-form-submit').disabled = !formValid;
 })
 
+document.querySelector('.submit-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    const $emailInput = document.querySelector('input[name="email"]');
+    const valid = isEmailValid($emailInput.value);
+    document.querySelector('.delete-button').style.display= valid? "none" : "block";
+    updateUI('email', valid);
+    const formValid = isFormValid();
+    document.querySelector('#signup-form-submit').disabled = !formValid;
+})
+
+
 const isFormValid = () => {
     const result = [...document.querySelectorAll('span.checkmark')].reduce((acc, $el) => {
         return $el.classList.contains('valid')? acc: false;
