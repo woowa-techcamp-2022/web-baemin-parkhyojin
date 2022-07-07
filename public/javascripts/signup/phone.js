@@ -44,3 +44,9 @@ const enableNext = () => {
     enableNextAnchor(true);
 }
 
+const initCertNum = ($input) => {
+    $input.value = "";
+    enableNextAnchor(false);
+    updateCheckmark('certNum', false);
+}
+
