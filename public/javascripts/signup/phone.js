@@ -1,3 +1,9 @@
+document.querySelector('input[name="phoneNum"]').addEventListener('keyup', (e) => {
+    e.target.value = addDashToPhoneNum(e.target.value);
+    const valid = isPhoneNumValid(e.target.value);
+    updateCheckmark('phoneNum', valid);
+    enableCertNumButton(valid);
+})
 const addDashToPhoneNum = (value) => {
     const numString = value.replace(/[^0-9]/g, "");
     const result = numString.split("").reduce((acc, curr) => {
