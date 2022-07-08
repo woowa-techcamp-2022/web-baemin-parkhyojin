@@ -1,6 +1,6 @@
-extends layout
+extends ../layout
 
-include ./common/text-input
+include ../common/text-input
 
 block head
   link(rel='stylesheet', href='/stylesheets/signin.css')
@@ -26,6 +26,8 @@ block content
           errorText: "비밀번호를 입력해주세요."
       })
       input(type="submit" value="로그인")
-    div.signup
+    include ./find-button-list
+    include ./social-login-button-list
+    div.row
       p= '혹시, 배달의민족이 처음이신가요?'
       a.signup(href="/signup/agree")= '회원가입'
