@@ -1,5 +1,7 @@
 mixin radio-item({name, value, label, checked = false, imgSrc})
       div.radio-wrapper
-        input(type="radio" name=name id=name value=value checked=checked)
-        label(for=name)= label
+        input(type="radio" name=name id=value value=value checked=checked)
+        label(for=value)
+          span.circle(class= checked? "checked": "")
+          p= label
         img.radio(src=imgSrc)      

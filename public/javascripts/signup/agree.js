@@ -1,5 +1,5 @@
 document.querySelector('form').addEventListener('click', (e) => {
-    const {name, checked, type, classList} = e.target;
+    const {name, checked, type, classList, value} = e.target;
     if(name==="all-agree"){
         checkAll(checked);
     }
@@ -9,6 +9,9 @@ document.querySelector('form').addEventListener('click', (e) => {
     }
     if(name==="all-agree" || classList.contains('agree-required')){
         updateNextEnabled();
+    }
+    if(type==="radio"){
+        updateRadio(value);
     }
 })
 
@@ -39,4 +42,15 @@ const updateNextEnabled = () => {
 const updateCheckbox = (name, checked) => {
     if(checked) document.querySelector(`label[for="${name}"] span.checkmark`).classList.add('checked');
     else document.querySelector(`label[for="${name}"] span.checkmark`).classList.remove('checked')
+}
+
+const updateRadio = (value) => {
+    if(value==="over-14"){
+        document.querySelector(`label[for="over-14"] span.circle`).classList.add('checked');
+        document.querySelector(`label[for="under-14"] span.circle`).classList.remove('checked');
+    }
+    if(value==="under-14"){
+        document.querySelector(`label[for="under-14"] span.circle`).classList.add('checked');
+        document.querySelector(`label[for="over-14"] span.circle`).classList.remove('checked');
+    }
 }
