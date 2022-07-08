@@ -2,8 +2,9 @@ include ./checkbox-item
 
 div.row
     input(type='checkbox' name='all-agree' id='all-agree')
-    label(for='all-agree')
-        strong= '전체동의'
+    label.checkbox(for='all-agree')
+        span.checkbox.checkmark
+        strong='전체동의'
 +checkbox-item({
     name: '배달의민족 이용약관 동의',
     agreeRequired: true,

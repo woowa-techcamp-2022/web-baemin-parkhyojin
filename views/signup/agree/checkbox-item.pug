@@ -1,5 +1,7 @@
 mixin checkbox-item({name, agreeRequired})
       div.row   
         input(type='checkbox' name=name id=name class=(agreeRequired? "agree-required" : ""))
-        label(for=name)= name + (agreeRequired? '' : '(선택)')
+        label.checkbox(for=name)
+          span.checkbox.checkmark
+          p=name + (agreeRequired? '' : '(선택)')
         img.arrow(src='/images/arrow.png' alt='arrow')      

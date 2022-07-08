@@ -4,6 +4,7 @@ document.querySelector('form').addEventListener('click', (e) => {
         checkAll(checked);
     }
     if(name!=="all-agree" && type==="checkbox"){
+        updateCheckbox(name, checked);
         updateAllChecked();
     }
     if(name==="all-agree" || classList.contains('agree-required')){
@@ -13,7 +14,8 @@ document.querySelector('form').addEventListener('click', (e) => {
 
 const checkAll = (checked) => {
     [...document.querySelectorAll('input[type="checkbox"]')].forEach(($el) => {
-        $el.checked = checked
+        $el.checked = checked;
+        updateCheckbox($el.name, checked);
     })
 }
 
@@ -32,4 +34,9 @@ const updateNextEnabled = () => {
     const $nextAnchor = document.querySelector('a.next');
     if(allChecked) $nextAnchor.classList.remove('disabled')
     else $nextAnchor.classList.add('disabled')
+}
+
+const updateCheckbox = (name, checked) => {
+    if(checked) document.querySelector(`label[for="${name}"] span.checkmark`).classList.add('checked');
+    else document.querySelector(`label[for="${name}"] span.checkmark`).classList.remove('checked')
 }
