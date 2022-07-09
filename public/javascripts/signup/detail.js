@@ -34,7 +34,7 @@ $form.addEventListener('click', (e) => {
         const valid = isEmailValid($emailInput.value);
         const $deleteButton = document.querySelector('.delete-button');
         if(valid){
-            $emailInput.disabled = true;
+            $emailInput.readOnly = true;
             e.target.disabled = true;
             $deleteButton.style.display = "none";
             [...document.querySelectorAll(".text-input-wrapper")].forEach($el => {
@@ -48,7 +48,7 @@ $form.addEventListener('click', (e) => {
 const isFormValid = () => {
     const result = [...document.querySelectorAll('span.checkmark')].reduce((acc, $el) => {
         return $el.classList.contains('valid')? acc: false;
-    }, true)
+    }, true);
     return result;
 }
 
